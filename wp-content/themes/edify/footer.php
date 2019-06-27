@@ -2,13 +2,13 @@
     <div class="container">
         <div class="separator-box">
             <div class="row">
-                <div class="col-sm-5">
+                <div class="col-sm-12 col-xs-12 col-md-12 col-lg-5">
                     <div class="bottomcontent">
                         <img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Brand Logo"><br/>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
                     <label class="list-label">Company</label>
                     <ul class="footer-links">
                         <li><a href="#">Our Story</a></li>
@@ -17,7 +17,7 @@
                         <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
                     <label class="list-label">About</label>
                     <ul class="footer-links">
                         <li><a href="#">FAQ</a></li>
@@ -27,7 +27,7 @@
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
                     <label class="list-label">Reach Us</label>
                     <ul class="footer-links">
                         <li><a href="#"><span class="social-link icon-receiver"></span>+91 8287 200 400</a></li>
@@ -103,17 +103,20 @@
         //alert(curveCount)
 
         $(window).scroll(function(){
-            if($(this).scrollTop() > (boxoffset + boxheight) - curveCount + 150){
-                $('.two-curves').addClass('move');
-                $('.form-section .two-curves').css({
-                    top:boxheight - 230
-                });
-            }else{
-                $('.two-curves').removeClass('move');
-                $('.form-section .two-curves').css({
-                    top: curveoffset
-                });
+            if($(this).width() > 991){
+                if($(this).scrollTop() > (boxoffset + boxheight) - curveCount + 150){
+                    $('.two-curves').addClass('move');
+                    $('.form-section .two-curves').css({
+                        top:boxheight - 230
+                    });
+                }else{
+                    $('.two-curves').removeClass('move');
+                    $('.form-section .two-curves').css({
+                        top: curveoffset
+                    });
+                }
             }
+            
 
         });
     });

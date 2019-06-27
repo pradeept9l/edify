@@ -1,0 +1,59 @@
+@media (max-width:991px) {
+    .banner-content h1 {font-size: 24px;}
+    .form-section .two-curves {position: relative;}
+    .two-curves::before {left: 0;transform: rotate(0deg);border-radius: 0;}
+    .two-curves::after {position: initial;}
+    .headingfont {margin-bottom: 0;font-size: 24px;}
+    .freedemo-classes .light-gradient-shape {padding: 50px 0;    }
+    .two-curves {min-height: auto;padding-top: 40px;}
+    .abt-course h1 {font-size: 25px;}
+    .movingform {padding: 50px 0 70px;}
+    .freedemo-classes .light-gradient-shape {padding: 50px 0;border-radius: 0;}
+    .benefits-with-edify .secondary-font {font-size: 14px;}
+    .pricing-shortdetail p {line-height: 24px;font-size: 14px;}
+    .contentfont {font-size: 20px;}
+    .light-gradient-shape {padding: 50px 0 100px;border-radius: 0;}
+    .how-learn-maths .curved-in-shape {height: auto;padding: 0 50px 50px 0;-webkit-transform: rotate(-5deg);-ms-transform: rotate(-5deg);transform: rotate(0deg);}
+    .how-learn-maths .curved-in-shape .learn-maths-content {-webkit-transform: rotate(5deg);-ms-transform: rotate(5deg);transform: rotate(0deg);}
+    .how-learn-maths .online-video {margin-top: 30px;}
+    .learn-content h1 {font-size: 32px;}
+    .learn-maths-content {padding-top: 45px;}
+    .available-topics {padding: 50px 0;}
+    .price-holding-boxes {width: 100%;margin-top: 0;}
+    .classes-block {flex-flow: row wrap;}
+    .separator-box [class*="col-"]:not(:last-child){border-right:none}
+}
+@media (max-width:767px) {
+    .full-banner {padding: 110px 0 20px;height: auto;}
+    .banner-content h1 span {font-size: 24px;}
+    .banner-content h1 {font-size: 31px;}
+    .banner-content {width: 90%;}
+    .curved-banner {border-radius: 0 0 0 0;transform: rotate(0deg);}
+    .content-graphic {width: 100%;padding-left: 15px;padding-right: 15px;}
+    .single-subject-box {max-width: 100%;margin: 30px 0 0;}
+    .student-counts {margin-bottom: 30px;font-size: 37px;margin-top: 50px;}
+    .student-text-container {position: initial;}
+    .students-review {width: 100%;padding: 0px 0 65px;}
+    .action-box {padding: 0;}
+    .alteration-box {padding: 10px 0 50px;}
+    .contentfont {font-size: 20px;margin-top: 20px;}
+    .t-margin30 {margin-bottom: 30px;}
+    .curved-banner .shaded-content {-webkit-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg);}
+    .curved-in-shape {border-radius: 0;padding: 50px 50px 50px 1px;-webkit-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg);}
+    .teachers-boxes, .faq-straightbox, .learn-maths-content {-webkit-transform: rotate(0deg);-ms-transform: rotate(0deg);transform: rotate(0deg);}
+    .student-counts {line-height: 35px;font-size: 27px;}
+    .questions-container {margin: 30px auto 50px;}
+    .side-content img {width: 100%;margin-top: 20px;}
+    .two-actions {margin-top: -5px;padding: 52px 0 25px;}
+    .action-box {width: 100%;padding: 0 15px;margin-bottom: 35px;border: none;}
+    .action-box label {font-size: 15px;}
+    .single-subject-box h4 {font-size: 20px;}
+    .online-classes .video-tagline {font-size: 16px;}
+    .banner-content p {font-size: 14px;line-height: 24px;}
+    .content-graphic p {line-height: 24px;font-size: 14px;}
+    .subject-classes {padding: 40px 0 50px;}
+    .online-classes {padding: 65px 0;}
+    .carousel-size {width: 100%;max-width: 100%;}
+    .carousel-size .single-subject-box {height: auto;}
+    .form-box {width:100%;}
+}

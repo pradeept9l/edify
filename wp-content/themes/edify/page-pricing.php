@@ -8,7 +8,7 @@ get_header(); ?>
 				<div class="learn-maths-content">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-12 col-sm-12">
 								<div class="learn-content">
 									<h1>Our Pricing</h1>
 									<p>Edify aims to involve the students deeply and personally for maximum learning. <br/>We unlock the creative potential in progressive learning. </p>
@@ -21,7 +21,7 @@ get_header(); ?>
 			<div class="price-holding-boxes">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-12 col-sm-12">
 							<div class="classes-block">
 								<div class="classname-box">
 									<div class="class-name">
