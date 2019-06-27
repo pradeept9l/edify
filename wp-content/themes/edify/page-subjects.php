@@ -115,7 +115,7 @@ $query = new WP_Query( array(
                         </div>
                     </div>
 					<div class="col-md-12 col-sm-12 booking-action-btn">
-                        <a href="#" class="btn btn-primary">Book <span style="text-transform: capitalize;"><?= $_GET['subject']; ?></span> Course Now</a>
+                        <a href="/book-course" class="btn btn-primary">Book <span style="text-transform: capitalize;"><?= $_GET['subject']; ?></span> Course Now</a>
 					</div>
 				</div>
 			</div>

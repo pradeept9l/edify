@@ -28,7 +28,7 @@ get_header(); ?>
                             </h1>
                             <p>With Edify, master maths without resorting to rote learning or fall in love with reading English
                                 and using perfect grammar.</p>
-                            <a href="#" class="btn btn-primary">Book Free Demo</a>
+                            <a href="/book-course" class="btn btn-primary">Book Free Demo</a>
                         </div>
                     </div>
                 </div>
@@ -125,19 +125,19 @@ get_header(); ?>
 						<h2 class="headingfont">Classes by Subject</h2>
 						<div class="available-subjects">
 							<div class="single-subject-box">
-								<a href="#" class="full-click"></a>
+								<a href="/course?subject=maths&class=one" class="full-click"></a>
 								<div class="v-middle">
 									<img class="box-graphic" src="<?php echo get_template_directory_uri(); ?>/images/maths.svg" alt="Graphic" />
 									<h4>Maths</h4>
-									<a href="#" class="btn btn-primary">Select</a>
+									<a href="/course?subject=maths&class=one" class="btn btn-primary">Select</a>
 								</div>
 							</div>
 							<div class="single-subject-box">
-								<a href="#" class="full-click"></a>
+								<a href="/course?subject=english&class=one" class="full-click"></a>
 								<div class="v-middle">
 									<img class="box-graphic" src="<?php echo get_template_directory_uri(); ?>/images/english.svg" alt="Graphic" />
 									<h4>English</h4>
-									<a href="#" class="btn btn-primary">Select</a>
+									<a href="/course?subject=english&class=one" class="btn btn-primary">Select</a>
 								</div>
 							</div>
 						</div>
@@ -173,58 +173,36 @@ get_header(); ?>
 			</div>
 			<div class="student-text-container">
 				<div id="text-carousel" class="owl-carousel carousel-size">
-					<div class="item">
-						<div class="single-subject-box">
-							<span class="icon-quote"></span>
-							<p>I have never seen Fraction comparisons taught as beautifully and illustratively as here. ShreeSai used to have a fear of Fractions. Now she scores a 100%.</p>
-							<div class="person-box">
-								<span class="p-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></span>
-								<div class="p-detailbox">
-									<h5>Karunya</h5>
-									<label>Mother of ShreeSai, Grade 5</label>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="single-subject-box">
-							<span class="icon-quote"></span>
-							<p>I have never seen Fraction comparisons taught as beautifully and illustratively as here. ShreeSai used to have a fear of Fractions. Now she scores a 100%.</p>
-							<div class="person-box">
-								<span class="p-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></span>
-								<div class="p-detailbox">
-									<h5>Karunya</h5>
-									<label>Mother of ShreeSai, Grade 5</label>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="single-subject-box">
-							<span class="icon-quote"></span>
-							<p>I have never seen Fraction comparisons taught as beautifully and illustratively as here. ShreeSai used to have a fear of Fractions. Now she scores a 100%.</p>
-							<div class="person-box">
-								<span class="p-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></span>
-								<div class="p-detailbox">
-									<h5>Karunya</h5>
-									<label>Mother of ShreeSai, Grade 5</label>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="single-subject-box">
-							<span class="icon-quote"></span>
-							<p>I have never seen Fraction comparisons taught as beautifully and illustratively as here. ShreeSai used to have a fear of Fractions. Now she scores a 100%.</p>
-							<div class="person-box">
-								<span class="p-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></span>
-								<div class="p-detailbox">
-									<h5>Karunya</h5>
-									<label>Mother of ShreeSai, Grade 5</label>
-								</div>
-							</div>
-						</div>
-					</div>
+                    <?php
+                    $query = new WP_Query( array(
+                            'post_type' => 'testimonial',
+                            'numberposts' => -1,
+                            'posts_per_page' => 10
+                        )
+                    );
+
+                    if ($query->have_posts()):
+                    $i = 1;
+                    while ($query->have_posts()):
+                    $query->the_post();
+                    $dayRange = get_post_meta($post->ID, 'day_range', true);
+                    $timeRange = get_post_meta($post->ID, 'time_range', true);
+
+                    ?>
+                        <div class="item">
+                            <div class="single-subject-box">
+                                <span class="icon-quote"></span>
+                                <p><?php the_content(); ?></p>
+                                <div class="person-box">
+                                    <span class="p-image" style="background-image:url('<?= get_the_post_thumbnail_url(); ?>')"></span>
+                                    <div class="p-detailbox">
+                                        <h5><?php the_title(); ?></h5>
+                                        <label><?php the_excerpt(); ?></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php $i++; endwhile;   endif; ?>
 				</div>
 			</div>
 		</section>
