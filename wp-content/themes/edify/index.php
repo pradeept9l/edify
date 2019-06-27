@@ -71,7 +71,7 @@ get_header(); ?>
 								<h2 class="secondary-font">Featured Teachers</h2>
 								<p>Select our experienced teachers, who have taught more than <span>10000+ students</span></p>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-4 t-margin30">
 								<div class="aboutteacher-box">
 									<div class="teacher-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></div>
 									<div class="teacher-detail">
@@ -85,7 +85,7 @@ get_header(); ?>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-4 t-margin30">
 								<div class="aboutteacher-box">
 									<div class="teacher-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></div>
 									<div class="teacher-detail">

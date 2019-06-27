@@ -206,6 +206,7 @@ header + footer{
 .main-banner{
 	width:100%;
 	overflow: hidden;
+        margin-top: 0;
 }
 .curved-banner {
 	background-color: #000;
@@ -1348,7 +1349,7 @@ footer .social-link{
 	-webkit-animation: extend 2s infinite linear;
 }
 @keyframes extend{
-	form{
+	from{
 		-webkit-transform:scale(1);
 		        transform:scale(1);
 		opacity:0.5;
@@ -1361,7 +1362,7 @@ footer .social-link{
 	
 }
 @-webkit-keyframes extend{
-	form{
+	from{
 		-webkit-transform:scale(1);
 		        transform:scale(1);
 		opacity:0.5;
