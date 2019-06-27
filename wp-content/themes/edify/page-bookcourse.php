@@ -27,45 +27,7 @@ get_header();
 						<div class="col-md-6">
 							<div class="form-box">
 								<h4 class="form-detailfont">Share your details for us to get in touch with you.</h4>
-								<div class="form-group">
-									<label>Your Name</label>
-									<input class="form-control" type="text" placeholder="" />
-								</div>
-								<div class="form-group">
-									<label>Contact Number</label>
-									<input class="form-control" type="text" placeholder="" />
-								</div>
-								<div class="form-group error">
-									<label>Your Child's Name</label>
-									<input class="form-control" type="text" placeholder="" />
-								</div>
-								<div class="form-group">
-									<label>Student's Grade</label>
-									<select class="form-control selectpicker">
-										<option>Grade one</option>
-										<option>Grade two</option>
-										<option>Grade three</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label>Subject/ Course</label>
-									<select class="form-control selectpicker">
-										<option>*</option>
-										<option>**</option>
-										<option>***</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label>Plan Preference</label>
-									<select class="form-control selectpicker">
-										<option>*</option>
-										<option>**</option>
-										<option>***</option>
-									</select>
-								</div>
-								<div class="form-group error">
-									<input class="btn btn-primary full-btn" type="submit" value="Get Connected" />
-								</div>
+								<?= do_shortcode('[contact-form-7 id="8" title="Book Course"]'); ?>
 							</div>
 						</div>
 					</div>

@@ -6,7 +6,7 @@
 */
 
 
-add_action( 'wp_enqueue_scripts', 'awesome_script_enqueue');
+//add_action( 'wp_enqueue_scripts', 'awesome_script_enqueue');
 
 
 /*
@@ -15,13 +15,13 @@ add_action( 'wp_enqueue_scripts', 'awesome_script_enqueue');
 	==========================================
 */
 function awesome_theme_setup() {
-	
+
 	add_theme_support('menus');
-	
+
 	register_nav_menu('primary', 'Top Navigation');
 	register_nav_menu('secondary', 'Footer Navigation');
 	//register_nav_menu('Thirdparty', 'Page Navigation');
-	
+
 }
 
 add_action('init', 'awesome_theme_setup');
@@ -61,7 +61,7 @@ function awesome_widget_setup() {
 	
 }
 add_action('widgets_init','awesome_widget_setup');
-
+//add_filter('flash_uploader',create_function('$a','return false;'),5);
 function awesome_widget_setup2() {
 	
 	register_sidebar(
@@ -145,8 +145,48 @@ function awesome_custom_post_type (){
 add_action('init','awesome_custom_post_type');
 
 
+//Testimonial custom post type
 
+function testimonial_custom_post_type (){
 
+    $labels = array(
+        'name' => 'Testimonial',
+        'singular_name' => 'Testimonial',
+        'add_new' => 'Add Testimonial',
+        'all_items' => 'All Testimonial',
+        'add_new_item' => 'Add Testimonial',
+        'edit_item' => 'Edit Item',
+        'new_item' => 'New Item',
+        'view_item' => 'View Item',
+        'search_item' => 'Search Testimonial',
+        'not_found' => 'No items found',
+        'not_found_in_trash' => 'No items found in trash',
+        'parent_item_colon' => 'Parent Item'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon'	     => 'dashicons-plus',
+        'public' => true,
+        'has_archive' => false,
+        'publicly_queryable' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail',
+            'revisions',
+        ),
+        //'taxonomies' => array('category'),
+        'menu_position' => 5,
+        'exclude_from_search' => false
+    );
+    register_post_type('testimonial',$args);
+}
+add_action('init','testimonial_custom_post_type');
 function awesome_custom_taxonomies() {
 
 
@@ -226,66 +266,6 @@ function awesome_get_terms( $postID, $term ){
 	
 }
 
-#bootstrap slider custom
-//function custom_bootstrap_slider() {
-//	$labels = array(
-//		'name'               => _x( 'Slider', 'post type general name'),
-//		'singular_name'      => _x( 'Slide', 'post type singular name'),
-//		'menu_name'          => _x( 'Banner Slider', 'admin menu'),
-//		'name_admin_bar'     => _x( 'Slide', 'add new on admin bar'),
-//		'add_new'            => _x( 'Add New', 'Slide'),
-//		'add_new_item'       => __( 'Name'),
-//		'new_item'           => __( 'New Slide'),
-//		'edit_item'          => __( 'Edit Slide'),
-//		'view_item'          => __( 'View Slide'),
-//		'all_items'          => __( 'All Slide'),
-//		'featured_image'     => __( 'Featured Image', 'text_domain' ),
-//		'featured_image'     => __( 'Featured Image', 'text_domain' ),
-//		'search_items'       => __( 'Search Slide'),
-//		'parent_item_colon'  => __( 'Parent Slide:'),
-//		'not_found'          => __( 'No Slide found.'),
-//		'not_found_in_trash' => __( 'No Slide found in Trash.'),
-//	);
-//
-//	$args = array(
-//		'labels'             => $labels,
-//		'menu_icon'	     => 'dashicons-image-flip-horizontal',
-//    	'description'        => __( 'Description.'),
-//		'public'             => true,
-//		'publicly_queryable' => true,
-//		'show_ui'            => true,
-//		'show_in_menu'       => true,
-//		'query_var'          => true,
-//		'rewrite'            => true,
-//		'capability_type'    => 'post',
-//		'has_archive'        => true,
-//		'hierarchical'       => true,
-//		'menu_position'      => null,
-//		'supports'           => array('title','editor','thumbnail')
-//	);
-//
-//	register_post_type( 'slider', $args );
-//}
-//add_action( 'init', 'custom_bootstrap_slider' );
-//
-//
-//add_action( 'wp_footer', 'mycustom_wp_footer' );
-//function mycustom_wp_footer() {
-//?>
-<!--<script type="text/javascript">-->
-<!--document.addEventListener( 'wpcf7mailsent', function( event ) {-->
-<!--    if ( '80' == event.detail.contactFormId ) { // Change 123 to the ID of the form -->
-<!--        $('.suceess-modalbox').show();-->
-<!--    }else if ( '2067' == event.detail.contactFormId ) { // Change 123 to the ID of the form -->
-<!--        $('.suceess-modalbox').show();-->
-<!--    }else if ( '2142' == event.detail.contactFormId ) { // Change 123 to the ID of the form -->
-<!--        $('.suceess-modalbox').show();-->
-<!--    }-->
-<!--}, false );-->
-<!--</script>-->
-<?php
-//}
-//add_filter( 'pre_get_posts', 'tgm_io_cpt_search' );
 /**
  * This function modifies the main WordPress query to include an array of 
  * post types instead of the default 'post' post type.
