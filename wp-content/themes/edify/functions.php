@@ -16,11 +16,11 @@
 */
 function awesome_theme_setup() {
 
-	add_theme_support('menus');
+    add_theme_support('menus');
 
-	register_nav_menu('primary', 'Top Navigation');
-	register_nav_menu('secondary', 'Footer Navigation');
-	//register_nav_menu('Thirdparty', 'Page Navigation');
+    register_nav_menu('primary', 'Top Navigation');
+    register_nav_menu('secondary', 'Footer Navigation');
+    //register_nav_menu('Thirdparty', 'Page Navigation');
 
 }
 
@@ -45,38 +45,38 @@ add_theme_support('html5',array('search-form'));
 	==========================================
 */
 function awesome_widget_setup() {
-	
-	register_sidebar(
-		array(	
-			'name'	=> 'Sidebar',
-			'id'	=> 'sidebar-1',
-			'class'	=> 'custom',
-			'description' => 'Standard Sidebar',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
-		)
-	);
-	
+
+    register_sidebar(
+        array(
+            'name'	=> 'Sidebar',
+            'id'	=> 'sidebar-1',
+            'class'	=> 'custom',
+            'description' => 'Standard Sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h1 class="widget-title">',
+            'after_title'   => '</h1>',
+        )
+    );
+
 }
 add_action('widgets_init','awesome_widget_setup');
 //add_filter('flash_uploader',create_function('$a','return false;'),5);
 function awesome_widget_setup2() {
-	
-	register_sidebar(
-		array(	
-			'name'	=> 'Leftbar',
-			'id'	=> 'sidebar-2',
-			'class'	=> 'custom2',
-			'description' => 'Standard Leftbar',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h1 class="widget-title">',
-			'after_title'   => '</h1>',
-		)
-	);
-	
+
+    register_sidebar(
+        array(
+            'name'	=> 'Leftbar',
+            'id'	=> 'sidebar-2',
+            'class'	=> 'custom2',
+            'description' => 'Standard Leftbar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</aside>',
+            'before_title'  => '<h1 class="widget-title">',
+            'after_title'   => '</h1>',
+        )
+    );
+
 }
 add_action('widgets_init','awesome_widget_setup2');
 
@@ -93,7 +93,7 @@ add_action('widgets_init','awesome_widget_setup2');
 	==========================================
 */
 function awesome_remove_version() {
-	return '';
+    return '';
 }
 add_filter('the_generator', 'awesome_remove_version');
 
@@ -104,43 +104,43 @@ add_filter('the_generator', 'awesome_remove_version');
 */
 
 function awesome_custom_post_type (){
-	
-	$labels = array(
-		'name' => 'Courses',
-		'singular_name' => 'Courses',
-		'add_new' => 'Add Courses',
-		'all_items' => 'All Courses',
-		'add_new_item' => 'Add Courses',
-		'edit_item' => 'Edit Item',
-		'new_item' => 'New Item',
-		'view_item' => 'View Item',
-		'search_item' => 'Search Courses',
-		'not_found' => 'No items found',
-		'not_found_in_trash' => 'No items found in trash',
-		'parent_item_colon' => 'Parent Item'
-	);
-	$args = array(
-		'labels' => $labels,
-		'menu_icon'	     => 'dashicons-welcome-learn-more',
-		'public' => true,
-		'has_archive' => false,
-		'publicly_queryable' => true,
-		'query_var' => true,
-		'rewrite' => true,
-		'capability_type' => 'post',
-		'hierarchical' => false,
-		'supports' => array(
-			'title',
-			'editor',
-			'excerpt',
-			'thumbnail',
-			'revisions',
-		),
-		// 'taxonomies' => array('category'),
-		'menu_position' => 5,
-		'exclude_from_search' => false
-	);
-	register_post_type('Courses',$args);
+
+    $labels = array(
+        'name' => 'Courses',
+        'singular_name' => 'Courses',
+        'add_new' => 'Add Courses',
+        'all_items' => 'All Courses',
+        'add_new_item' => 'Add Courses',
+        'edit_item' => 'Edit Item',
+        'new_item' => 'New Item',
+        'view_item' => 'View Item',
+        'search_item' => 'Search Courses',
+        'not_found' => 'No items found',
+        'not_found_in_trash' => 'No items found in trash',
+        'parent_item_colon' => 'Parent Item'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon'	     => 'dashicons-welcome-learn-more',
+        'public' => true,
+        'has_archive' => false,
+        'publicly_queryable' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail',
+            'revisions',
+        ),
+        // 'taxonomies' => array('category'),
+        'menu_position' => 5,
+        'exclude_from_search' => false
+    );
+    register_post_type('Courses',$args);
 }
 add_action('init','awesome_custom_post_type');
 
@@ -187,58 +187,145 @@ function testimonial_custom_post_type (){
     register_post_type('testimonial',$args);
 }
 add_action('init','testimonial_custom_post_type');
+
+//Custom post for Teacher
+function teacher_custom_post_type (){
+
+    $labels = array(
+        'name' => 'Teacher',
+        'singular_name' => 'Teacher',
+        'add_new' => 'Add Teacher',
+        'all_items' => 'All Teacher',
+        'add_new_item' => 'Add Teacher',
+        'edit_item' => 'Edit Item',
+        'new_item' => 'New Item',
+        'view_item' => 'View Item',
+        'search_item' => 'Search Teacher',
+        'not_found' => 'No items found',
+        'not_found_in_trash' => 'No items found in trash',
+        'parent_item_colon' => 'Parent Item'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon'	     => 'dashicons-admin-users',
+        'public' => true,
+        'has_archive' => false,
+        'publicly_queryable' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail',
+            'revisions',
+        ),
+        //'taxonomies' => array('category'),
+        'menu_position' => 5,
+        'exclude_from_search' => false
+    );
+    register_post_type('teacher',$args);
+}
+add_action('init','teacher_custom_post_type');
+
+
+//Custom post for FAQ
+function faq_custom_post_type (){
+
+    $labels = array(
+        'name' => 'FAQ',
+        'singular_name' => 'FAQ',
+        'add_new' => 'Add FAQ',
+        'all_items' => 'All FAQ',
+        'add_new_item' => 'Add FAQ',
+        'edit_item' => 'Edit Item',
+        'new_item' => 'New Item',
+        'view_item' => 'View Item',
+        'search_item' => 'Search FAQ',
+        'not_found' => 'No items found',
+        'not_found_in_trash' => 'No items found in trash',
+        'parent_item_colon' => 'Parent Item'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon'	     => 'dashicons-editor-help',
+        'public' => true,
+        'has_archive' => false,
+        'publicly_queryable' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchical' => false,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail',
+            'revisions',
+        ),
+        //'taxonomies' => array('category'),
+        'menu_position' => 5,
+        'exclude_from_search' => false
+    );
+    register_post_type('faq',$args);
+}
+add_action('init','faq_custom_post_type');
+
+
 function awesome_custom_taxonomies() {
 
 
-	$labels = array(
-		'name' => 'Subjects',
-		'singular_name' => 'Subjects',
-		'search_items' => 'Search Subjects',
-		'all_items' => 'All Subjects',
-		'parent_item' => 'Parent Field',
-		'parent_item_colon' => 'Parent Field:',
-		'edit_item' => 'Edit Subjects',
-		'update_item' => 'Update Subjects',
-		'add_new_item' => 'Add New Subjects',
-		'new_item_name' => 'New Subjects Name',
-		'menu_name' => 'Category Subjects'
-	);
-	
-	$args = array(
-		'hierarchical' => true,
-		'labels' => $labels,
-		'show_ui' => true,
-		'show_admin_column' => true,
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'subjects' )
-	);
+    $labels = array(
+        'name' => 'Subjects',
+        'singular_name' => 'Subjects',
+        'search_items' => 'Search Subjects',
+        'all_items' => 'All Subjects',
+        'parent_item' => 'Parent Field',
+        'parent_item_colon' => 'Parent Field:',
+        'edit_item' => 'Edit Subjects',
+        'update_item' => 'Update Subjects',
+        'add_new_item' => 'Add New Subjects',
+        'new_item_name' => 'New Subjects Name',
+        'menu_name' => 'Category Subjects'
+    );
 
-	register_taxonomy('subjects', array('courses'), $args);
-	//add new taxonomy hierarchical
-	$labels = array(
-		'name' => 'Classes',
-		'singular_name' => 'Classes',
-		'search_items' => 'Search Classes',
-		'all_items' => 'All Classess',
-		'parent_item' => 'Parent Field',
-		'parent_item_colon' => 'Parent Field:',
-		'edit_item' => 'Edit Classes',
-		'update_item' => 'Update Classes',
-		'add_new_item' => 'Add New Classes',
-		'new_item_name' => 'New Classes Name',
-		'menu_name' => 'Category Classes'
-	);
-	
-	$args = array(
-		'hierarchical' => true,
-		'labels' => $labels,
-		'show_ui' => true,
-		'show_admin_column' => true,
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'classes' )
-	);
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'subjects' )
+    );
 
-	register_taxonomy('classes', array('courses'), $args);
+    register_taxonomy('subjects', array('courses'), $args);
+    //add new taxonomy hierarchical
+    $labels = array(
+        'name' => 'Classes',
+        'singular_name' => 'Classes',
+        'search_items' => 'Search Classes',
+        'all_items' => 'All Classess',
+        'parent_item' => 'Parent Field',
+        'parent_item_colon' => 'Parent Field:',
+        'edit_item' => 'Edit Classes',
+        'update_item' => 'Update Classes',
+        'add_new_item' => 'Add New Classes',
+        'new_item_name' => 'New Classes Name',
+        'menu_name' => 'Category Classes'
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'classes' )
+    );
+
+    register_taxonomy('classes', array('courses'), $args);
 
 
 }
@@ -252,35 +339,36 @@ add_action( 'init' , 'awesome_custom_taxonomies' );
 */
 
 function awesome_get_terms( $postID, $term ){
-	
-	$terms_list = wp_get_post_terms($postID, $term); 
-	$output = '';
-					
-	$i = 0;
-	foreach( $terms_list as $term ){ $i++;
-		if( $i > 1 ){ $output .= ', '; }
-		$output .= '<a href="' . get_term_link( $term ) . '">'. $term->name .'</a>';
-	}
-	
-	return $output;
-	
+
+    $terms_list = wp_get_post_terms($postID, $term);
+    $output = '';
+
+    $i = 0;
+    foreach( $terms_list as $term ){ $i++;
+        if( $i > 1 ){ $output .= ', '; }
+        $output .= '<a href="' . get_term_link( $term ) . '">'. $term->name .'</a>';
+    }
+
+    return $output;
+
 }
 
 /**
- * This function modifies the main WordPress query to include an array of 
+ * This function modifies the main WordPress query to include an array of
  * post types instead of the default 'post' post type.
  *
  * @param object $query  The original query.
  * @return object $query The amended query.
  */
 function tgm_io_cpt_search( $query ) {
-	
+
     if ( $query->is_search ) {
-	$query->set( 'post_type', array( 'treatmentd', 'hospitels', 'doctors') );
+        $query->set( 'post_type', array( 'treatmentd', 'hospitels', 'doctors') );
     }
-    
+
     return $query;
-    
+
 }
+
 
 

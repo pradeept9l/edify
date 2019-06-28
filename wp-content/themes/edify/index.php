@@ -71,48 +71,32 @@ get_header(); ?>
 								<h2 class="secondary-font">Featured Teachers</h2>
 								<p>Select our experienced teachers, who have taught more than <span>10000+ students</span></p>
 							</div>
-							<div class="col-md-4 t-margin30">
-								<div class="aboutteacher-box">
-									<div class="teacher-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></div>
-									<div class="teacher-detail">
-										<h4>Goldy Banerjee</h4>
-										<label class="abt-study">IIM Indore</label>
-										<div class="tag-container">
-											<span>Former Investment Banker</span>
-											<span>Passionate Teacher</span>
-											<span>Taught over 10,000 students</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 t-margin30">
-								<div class="aboutteacher-box">
-									<div class="teacher-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></div>
-									<div class="teacher-detail">
-										<h4>Goldy Banerjee</h4>
-										<label class="abt-study">IIM Indore</label>
-										<div class="tag-container">
-											<span>Former Investment Banker</span>
-											<span>Passionate Teacher</span>
-											<span>Taught over 10,000 students</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="aboutteacher-box">
-									<div class="teacher-image" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/teacher.jpg')"></div>
-									<div class="teacher-detail">
-										<h4>Goldy Banerjee</h4>
-										<label class="abt-study">IIM Indore</label>
-										<div class="tag-container">
-											<span>Former Investment Banker</span>
-											<span>Passionate Teacher</span>
-											<span>Taught over 10,000 students</span>
-										</div>
-									</div>
-								</div>
-							</div>
+                            <?php
+                            $query1 = new WP_Query( array(
+                                    'post_type' => 'teacher',
+                                    'numberposts' => -1,
+                                    'posts_per_page' => 3
+                                )
+                            );
+
+                            if ($query1->have_posts()):
+                                while ($query1->have_posts()):
+                                    $query1->the_post();
+//                                echo '<pre>'; print_r($post); die;
+                                    ?>
+                                    <div class="col-md-4 t-margin30">
+                                        <div class="aboutteacher-box">
+                                            <div class="teacher-image" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')"></div>
+                                            <div class="teacher-detail">
+                                                <h4><?= $post->post_title; ?></h4>
+                                                <label class="abt-study"><?=  $post->post_excerpt; ?></label>
+                                                <div class="tag-container">
+                                                    <?php echo  $post->post_content; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php  endwhile;   endif; ?>
 						</div>
 					</div>
 				</div>
@@ -215,42 +199,23 @@ get_header(); ?>
 								<h2 class="secondary-font">Important FAQs</h2>
 								<div class="questions-container">
 									<ul class="q-a-list">
-										<li class="opened">
-											<h4 class="question">How do I join the classes?</h4>
-											<div class="q-answer" style="display:block">
-												<p>You will get periodic updates about your child’s progress, specific areas of weaknesses and growth. You will receive these updates via mail / messages and can be accessed when you login to the website</p>
-											</div>
-										</li>
-										<li>
-											<h4 class="question">What device can my child use to join the classes?</h4>
-											<div class="q-answer">
-												<p>You will get periodic updates about your child’s progress, specific areas of weaknesses and growth. You will receive these updates via mail / messages and can be accessed when you login to the website</p>
-											</div>
-										</li>
-										<li>
-											<h4 class="question">How do I keep track of my child’s learning and progress? </h4>
-											<div class="q-answer">
-												<p>You will get periodic updates about your child’s progress, specific areas of weaknesses and growth. You will receive these updates via mail / messages and can be accessed when you login to the website</p>
-											</div>
-										</li>
-										<li>
-											<h4 class="question">If my child has a doubt after the sessions are over, how can these be clarified?</h4>
-											<div class="q-answer">
-												<p>You will get periodic updates about your child’s progress, specific areas of weaknesses and growth. You will receive these updates via mail / messages and can be accessed when you login to the website</p>
-											</div>
-										</li>
-										<li>
-											<h4 class="question">How do I keep track of my child’s learning and progress? </h4>
-											<div class="q-answer">
-												<p>You will get periodic updates about your child’s progress, specific areas of weaknesses and growth. You will receive these updates via mail / messages and can be accessed when you login to the website</p>
-											</div>
-										</li>
-										<li>
-											<h4 class="question">If my child has a doubt after the sessions are over, how can these be clarified?</h4>
-											<div class="q-answer">
-												<p>You will get periodic updates about your child’s progress, specific areas of weaknesses and growth. You will receive these updates via mail / messages and can be accessed when you login to the website</p>
-											</div>
-										</li>
+                                        <?php
+                                        $args = array(
+                                            'post_type' => 'faq',
+                                            'numberposts' => -1,
+                                            'posts_per_page' => 20,
+                                            'order'            => 'ASC',
+                                        );
+                                        $posts = get_posts($args);
+                                        foreach($posts as $k=>$_post){ //echo '<pre>'; print_r($posts); die;
+                                            ?>
+                                            <li class="opened">
+                                                <h4 class="question"><?php echo $_post->post_title; ?></h4>
+                                                <div class="q-answer" <?php if($k == 0){ echo 'style="display:block;"'; }else{ echo 'style="display:none"';}?>>
+                                                    <p><?= $_post->post_content; ?></p>
+                                                </div>
+                                            </li>
+                                        <?php } ?>
 									</ul>
 								</div>
 							</div>

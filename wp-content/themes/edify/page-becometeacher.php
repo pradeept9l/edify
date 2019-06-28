@@ -23,27 +23,7 @@ get_header(); ?>
 					<div class="row">
 						<div class="col-md-6 col-sm-12"></div>
 						<div class="col-md-6 col-sm-12">
-							<div class="form-box">
-								<h4 class="form-detailfont">Share your details for us to get in touch with you.</h4>
-								<div class="form-group">
-									<label>Your Name</label>
-									<input class="form-control" type="text" placeholder="" />
-								</div>
-								<div class="form-group">
-									<label>Contact Number</label>
-									<input class="form-control" type="text" placeholder="" />
-								</div>
-								<div class="form-group">
-									<label>Upload CV</label>
-									<div class="upload-files" data-on="Browse file">
-										File name
-										<input class="form-control" type="file" />
-									</div>
-								</div>
-								<div class="form-group">
-									<input class="btn btn-primary full-btn" type="submit" value="Get Connected" />
-								</div>
-							</div>
+                            <?= do_shortcode('[contact-form-7 id="91" title="Become a Teacher"]'); ?>
 						</div>
 					</div>
 				</div>
