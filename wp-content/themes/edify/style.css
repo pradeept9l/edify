@@ -1577,6 +1577,11 @@ footer .brandlogo {
 .header-nav > li > a .icon-down-arrow {
     vertical-align: baseline;
 }
+.wpcf7-not-valid {
+    border-color: #f55752;
+    background-color: #fff1f1;
+}
+.screen-reader-response, .wpcf7-not-valid-tip {display: none;}
 
 @media(min-width:1700px){
 	.student-text-container{
