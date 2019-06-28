@@ -95,25 +95,53 @@
             });
 
         });
+        
         var boxoffset = $('.movingform .form-box').offset().top;
+        var movingheight = $('.movingform').outerHeight();
         var boxheight = $('.form-box').outerHeight();
         var curveheight = $('.form-section .two-curves').outerHeight();
         var curveoffset = $('.form-section .two-curves').offset().top;
         var curveCount = curveoffset + curveheight;
-        //alert(curveCount)
-
+        //alert(boxoffset+', '+movingheight+', '+boxheight)
         $(window).scroll(function(){
-            if($(this).width() > 991){
-                if($(this).scrollTop() > (boxoffset + boxheight) - curveCount + 150){
-                    $('.two-curves').addClass('move');
-                    $('.form-section .two-curves').css({
-                        top:boxheight - 230
-                    });
-                }else{
-                    $('.two-curves').removeClass('move');
-                    $('.form-section .two-curves').css({
-                        top: curveoffset
-                    });
+            
+            if($('.form-group .form-control').hasClass('wpcf7-not-valid')){
+                //setTimeout(function(){
+                    var windowoffset = $(window).scrollTop();
+                    var countheight = boxoffset + boxheight;
+                    var remainingheight = countheight - windowoffset;
+                    //salert(remainingheight);
+                    
+                    if($(this).width() > 991){
+                       if($(this).scrollTop() > (boxoffset + boxheight) - curveCount + 150){
+                        $('.two-curves').addClass('move');
+                        //alert(movingheight +"movingheight" + boxheight + 'boxheight')
+                        $('.form-section .two-curves').css({
+                           top:movingheight - (boxheight+230)
+                        });
+                        
+                       }
+
+                   }
+               // },0);
+               // alert(movingheight + ', '+ boxheight)
+                
+                
+            }else{
+                 
+                if($(this).width() > 991){
+                    if($(this).scrollTop() > (boxoffset + boxheight) - curveCount + 150){
+                        $('.two-curves').addClass('move');
+                        $('.form-section .two-curves').css({
+                            top:movingheight - boxheight + 230
+                        });
+                    }else{
+                        $('.two-curves').removeClass('move');
+                        $('.form-section .two-curves').css({
+                            top: curveoffset
+                        });
+                    }
+
                 }
             }
             
@@ -147,5 +175,20 @@
         });
     });
 </script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            if (window.location.hash) {
+                setTimeout(function() {
+                    $('html, body').scrollTop(0).show();
+                    $('html, body').animate({
+                        scrollTop: $(window.location.hash).offset().top - 100
+                        }, 500);
+                }, 0);
+            }
+            else {
+                $('html, body').show();
+            }
+        });
+    </script>
 </body>
 </html>
