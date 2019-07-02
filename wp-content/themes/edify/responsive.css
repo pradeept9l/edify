@@ -1,3 +1,6 @@
+@media (max-width:1299px) { 
+    .in-single-format .getting-up {margin-left: 50px;}
+}
 @media (max-width:991px) {
     .banner-content h1 {font-size: 24px;}
     .form-section .two-curves {position: relative;}
@@ -22,6 +25,8 @@
     .price-holding-boxes {width: 100%;margin-top: 0;}
     .classes-block {flex-flow: row wrap;}
     .separator-box [class*="col-"]:not(:last-child){border-right:none}
+    .two-curves.in-single-format::after {left: 0;top: 0;border-radius: 0;}
+    .in-single-format .getting-up {margin-top: -20px;}
 }
 @media (max-width:767px) {
     .full-banner {padding: 110px 0 20px;height: auto;}

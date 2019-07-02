@@ -1583,6 +1583,55 @@ footer .brandlogo {
 }
 .screen-reader-response, .wpcf7-not-valid-tip {display: none;}
 
+
+.two-curves.in-single-format::after {
+    content: '';
+    width: 100%;
+    background-color: #6a2dea;
+    height: 500px;
+    margin: 0;
+    position: absolute;
+    left: 70px;
+    top: 40px;
+    border-radius: 60px 0 0 80px;
+    transform: skewY(-7deg);
+    -webkit-transform: skewY(-7deg);
+    -moz-transform: skewY(-7deg);
+    -ms-transform: skewY(-7deg);
+    -o-transform: skewY(-7deg);
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+.two-curves.in-single-format::before {
+    content: '';
+    width: 100%;
+    background-color: #f4f7fd;
+    height: 500px;
+    margin: 0;
+    position: absolute;
+    left: 40px;
+    top: 70px;
+    border-radius: 60px 0 0 80px;
+    transform: skewY(-7deg);
+    -webkit-transform: skewY(-7deg);
+    -moz-transform: skewY(-7deg);
+    -ms-transform: skewY(-7deg);
+    -o-transform: skewY(-7deg);
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+.in-single-format .getting-up{
+	position:relative;
+	z-index:3;
+	color:#fff;
+	margin-top:70px;
+}
+.in-single-format .getting-up h1{
+	color:#fff;
+}
+
 @media(min-width:1700px){
 	.student-text-container{
 		left: 42%;
