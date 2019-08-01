@@ -1105,6 +1105,7 @@ footer .social-link{
 	-webkit-transition:all 0.3s ease 0s;
 	-o-transition:all 0.3s ease 0s;
 	transition:all 0.3s ease 0s;
+        position: relative;
 }
 .grade-card:hover,
 .grade-card.selected{
@@ -1120,12 +1121,40 @@ footer .social-link{
 	letter-spacing:0.5px;
 	margin-bottom:5px;
 }
+.grade-card p {
+    font-size: 13px;
+    font-weight: 300;
+    color: #747474;
+    margin: 0;
+}
 .grade-card label{
 	display:block;
 	font-size:13px;
 	font-weight:300;
 	letter-spacing:0.5px;
 	margin:0;
+}
+.listed-session-box {
+    padding: 25px 30px 22px;
+}   
+.view-detail {
+    text-align: left;
+    padding: 13px 30px;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid #e5e5e5;
+}
+.listing-seesion {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 100%;
+    padding: 0;
+    background: #fff;
+    z-index: 1;
+    border: 1px solid #d1d1d1;
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 .card-holder{
 	margin-top:30px;
@@ -1388,6 +1417,13 @@ footer .social-link{
 	border-radius:50px;
 	
 }
+.link-btn {
+    height: auto;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: #7b08ce;
+}
 .btn-primary{
 	border:1px solid #6a2dea;
 	background-color:#6a2dea;
@@ -1550,16 +1586,21 @@ footer .brandlogo {
 	width:100%;
 	padding:0;
 	margin:0;
+        padding-top: 15px;
 }
 .listed-sessions li{
 	width:100%;
 	position:relative;
-	padding-left:17px;
+	padding-left:15px;
 	display: block;
 	font-size: 13px;
 	font-weight: 300;
 	letter-spacing: 0.5px;
-	margin: 0;
+	margin: 0 0 10px;
+        line-height: normal;
+}
+.listed-sessions li:last-child {
+    margin-bottom: 0;
 }
 .listed-sessions li::before{
 	content: '';
@@ -1568,8 +1609,8 @@ footer .brandlogo {
 	border-radius: 50%;
 	background-color: #ba7dff;
 	position: absolute;
-	left: 2px;
-	top: 7px;
+	left: 0;
+	top: 8px;
 }
 .header-nav > li > a .icon-down-arrow::before {
     font-size: 6px;
@@ -1632,6 +1673,128 @@ footer .brandlogo {
 	color:#fff;
 }
 
+.how-learn-maths.subject-section {
+    margin-top: 43px;
+}
+.how-learn-maths.subject-section .curved-in-shape {
+    background-color: #f4f7fd;
+}
+.how-learn-maths.subject-section h1 {
+    color: #000;
+}
+.how-learn-maths.subject-section p {
+    color: #242526;
+}
+.how-learn-maths.subject-section .learn-content {
+    width: 420px;
+}
+.how-learn-maths.subject-section .learn-maths-content {
+    padding-top: 86px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 90px;
+    z-index: 1;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.how-learn-maths.subject-section .online-video {
+
+    background: transparent;
+        background-image: none;
+    box-shadow: none;
+    width: 604px;
+    height: 500px;
+    position: relative;
+    top: -41px;
+
+}
+.how-learn-maths.subject-section h1 span {
+    font-size: 14px;
+    color: #ffd231;
+    margin-bottom: 10px;
+    display: block;
+}
+.subject-alternate-box h2 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #000;
+    margin-bottom: 20px;
+}
+.subject-alternate-box p {
+    color: #262626;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    margin: 0px 0 20px;
+}
+.alteration-box.subject-alternate-box {
+    text-align: left;
+    padding: 90px 0 0;
+    margin-bottom: 35px;
+}
+.subject-alternate-box {margin-bottom: 35px;}
+.subject-alternate-box h3 {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #000;
+    margin-bottom: 5px;
+}
+.subject-alternate-box ul {
+    padding: 0;
+    margin-top: -10px;
+}
+.subject-alternate-box h4 {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #000;
+    margin-bottom: 5px;
+}
+.teacher-profile-box {
+    background: #fff;
+    padding-left: 102px;
+    margin-top: 80px;
+}
+.inner-box {
+    padding: 50px;
+    background-color: #7b08ce;
+    width: 100%;
+    border-radius: 50px 0 0 50px;
+}
+.teacher-container {
+    max-width: 1070px;
+}
+.teacher-profile-box .how-learn-maths.subject-section h1 {
+    color: #fff;
+    font-size: 24px;
+}
+.teacher-profile-box .how-learn-maths.subject-section p {
+    color: #ededfa;
+    font-size: 15px;
+}
+.teacher-profile-box .how-learn-maths.subject-section .learn-content {
+    width: 54%;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.teacher-profile-box .how-learn-maths.subject-section {
+    margin-bottom: 25px;
+}
+.teacher-img {
+    display: inline-block;
+    width: 360px;
+    height: 260px;
+    vertical-align: middle;
+    margin-left: 75px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center center;
+}
 @media(min-width:1700px){
 	.student-text-container{
 		left: 42%;

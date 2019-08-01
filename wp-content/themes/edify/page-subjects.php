@@ -56,7 +56,96 @@ $query = new WP_Query( array(
 				</div>
 			</div>
 		</section>
-		<section class="available-topics" id="gotoTopicslist">
+<section class="available-topics">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 grade-selection">
+						<h2 class="secondary-font">Select Topics for</h2>
+						<select class="form-control selectpicker">
+							<option>Grade 1</option>
+							<option>Grade 2</option>
+							<option>Grade 3</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 card-holder">
+						<div class="grade-card selected">
+							<h5>Where to Look From</h5>
+                                                        <p>3 Sessions</p>
+                                                        <ul class="listed-sessions">
+								<li>1 Sessions</li>
+								<li>2 Sessions</li>
+								<li>3 Sessions</li>
+								<li>4 Sessions</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-4 card-holder">
+						<div class="grade-card">
+							<h5>Fun with Numbers</h5>
+                                                        <p>3 Sessions</p>
+                                                         <div class="listing-seesion">
+                                                        <div class="listed-session-box">
+                                                            <h5>Where to Look From</h5>
+                                                        <p>3 Sessions</p>
+							<ul class="listed-sessions">
+								<li>1 Sessions</li>
+								<li>2 Sessions</li>
+								<li>3 Sessions</li>
+								<li>4 Sessions</li>
+							</ul>
+                                                        </div>  
+                                                            <div class="view-detail">
+                                                            <a class="btn link-btn" href="javascript:void(0)">View Detail</a>
+                                                        </div>
+                                                        </div>
+							
+						</div>
+					</div>
+					<div class="col-md-4 card-holder">
+						<div class="grade-card">
+							<h5>Give and Take</h5>
+                                                        <p>3 Sessions</p>
+							<ul class="listed-sessions">
+								<li>1 Sessions</li>
+								<li>2 Sessions</li>
+								<li>3 Sessions</li>
+								<li>4 Sessions</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-4 card-holder">
+						<div class="grade-card">
+							<h5>Long and Short</h5>
+                                                        <p>3 Sessions</p>
+							<ul class="listed-sessions">
+								<li>1 Sessions</li>
+								<li>2 Sessions</li>
+								<li>3 Sessions</li>
+								<li>4 Sessions</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12">
+						<div class="days-timing">
+							<div class="info-block">
+								<span class="icon-calendar"></span>
+								<label>Mondays & Wednesdays</label>
+							</div>
+							<div class="info-block">
+								<span class="icon-clock"></span>
+								<label>6:00 pm to 6:45 pm</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-sm-12 booking-action-btn">
+						<a href="#" class="btn btn-primary">Book Math Course Now</a>
+					</div>
+				</div>
+			</div>
+		</section>
+<!--		<section class="available-topics" id="gotoTopicslist">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 grade-selection">
@@ -86,21 +175,22 @@ $query = new WP_Query( array(
 				</div>
 				<div class="row">
                     <?php
-                    if( $query->have_posts() ):
-                        $i = 1;
-                    while( $query->have_posts() ): $query->the_post();
-                        $dayRange =  get_post_meta($post->ID, 'day_range', true);
-                        $timeRange =  get_post_meta($post->ID, 'time_range', true);
+//                    if( $query->have_posts() ):
+//                        $i = 1;
+//                    while( $query->have_posts() ): $query->the_post();
+//                        $dayRange =  get_post_meta($post->ID, 'day_range', true);
+//                        $timeRange =  get_post_meta($post->ID, 'time_range', true);
                     ?>
-                            <div class="col-md-4 card-holder" id="box-<?= $i; ?>" onclick="getDayRange(<?= $i; ?>);">
+                            <div class="col-md-3 card-holder" id="box-<? $i; ?>" onclick="getDayRange(<? $i; ?>);">
                                 <div class="grade-card">
-                                    <h5><?= the_title(); ?></h5>
-                                    <?= the_content() ?>
-                                    <input type="hidden" value="<?= $dayRange; ?>" id="day-<?= $i; ?>">
-                                    <input type="hidden" value="<?= $timeRange; ?>" id="time-<?= $i; ?>">
+                                    <h5><? the_title(); ?></h5>
+                                    <p>3 Sessions</p>
+                                    <? the_content() ?>
+                                    <input type="hidden" value="<? $dayRange; ?>" id="day-<? $i; ?>">
+                                    <input type="hidden" value="<? $timeRange; ?>" id="time-<? $i; ?>">
                                 </div>
                             </div>
-                    <?php $i++; endwhile;   endif; ?>
+                    <?php // $i++; endwhile;   endif; ?>
 
                     <div class="col-md-12 col-sm-12">
                         <div class="days-timing">
@@ -115,11 +205,11 @@ $query = new WP_Query( array(
                         </div>
                     </div>
 					<div class="col-md-12 col-sm-12 booking-action-btn">
-                        <a href="/book-course" class="btn btn-primary">Book <span style="text-transform: capitalize;"><?= $_GET['subject']; ?></span> Course Now</a>
+                        <a href="/book-course" class="btn btn-primary">Book <span style="text-transform: capitalize;"><? $_GET['subject']; ?></span> Course Now</a>
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>-->
 		<section class="benefits-with-edify">
 			<div class="light-gradient-shape">
 				<div class="benefit-content">
