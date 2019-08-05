@@ -34,20 +34,24 @@ $query = new WP_Query( array(
 							<div class="col-md-6">
 								<div class="learn-content">
 									<h1>How do you learn <br/><span>Maths</span> with us</h1>
-									<p>Children learn new concepts initially using concrete examples from daily life, then progress to pictorial representations, before finally using more abstract symbols in Maths.</p>
-									<p>More than 50 million children have used this approach and ranked amongst the top 1% globally over the last decade.</p>
-									<a href="#" class="btn btn-primary white-btn">Book Math Course Now</a>
+									<p>At edify class the focus is on vocabulary development and grammar. In most of the courses we will:</p>
+                                                                        <ul>
+                                                                            <li>Build academic vocabulary knowledge by using contextual and definitional information</li>
+                                                                            <li>Teach a variety of strategies for acquiring new vocabulary </li>
+                                                                            <li>Help students understand figurative language, word relationships, and nuances in word meanings</li>
+                                                                        </ul>
+									<a href="#" class="btn btn-primary white-btn">Browse Topics</a>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="online-video" style="background-image:url('<?= get_template_directory_uri(); ?>/images/video.jpg')">
-									<div class="shadelayer">
+									<div class="shadelayer custom-dot-layer">
 										<a href="#" class="show-in-popup popup-youtube full-click"></a>
-										<div class="v-middle">
+                                                                                <!--										<div class="v-middle">
 											<span class="play-active">
-												<img src="<?= get_template_directory_uri(); ?>/images/play.svg" alt="Play" />
+												<img src="<? get_template_directory_uri(); ?>/images/play.svg" alt="Play" />
 											</span>
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>

@@ -23,11 +23,11 @@ get_header(); ?>
                     <div class="container">
                         <div class="banner-content">
                             <h1>
-                                <span>India's Best Live</span>
-                                Online Classroom
+                                <small>Live</small>
+                                <span>Online Classes With</span>
+                                Inspiring Teachers
                             </h1>
-                            <p>With Edify, master maths without resorting to rote learning or fall in love with reading English
-                                and using perfect grammar.</p>
+                            <p>Learn by interacting with teachers who inspire your child.</p>
                             <a href="/book-course" class="btn btn-primary">Book Free Demo</a>
                         </div>
                     </div>
