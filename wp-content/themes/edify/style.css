@@ -1871,6 +1871,21 @@ footer .brandlogo {
     -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.1);
     box-shadow: 0 0 2px rgba(0,0,0,0.1);
 }
+.classname-box.custom-classname-box {
+    width: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+.classname-box.custom-classname-box .note-text {
+    margin-bottom: 15px;
+}
+.classname-box.custom-classname-box .price-per-time {
+    margin: 0;
+}
+.classname-box.custom-classname-box .price-per-time .font-rupee {font-size: 24px;top: 0;}
+.classname-box.custom-classname-box  .price-for-class .note-text:last-child {
+    margin-bottom: 10px;
+}
 .classname-box.static-box h1 {
     font-size: 38px;
     color: #072b6d;

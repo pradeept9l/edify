@@ -29,7 +29,7 @@
 <section class="alternate-boxes">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="alteration-box subject-alternate-box">
                     <h2>
                         Description
@@ -66,6 +66,25 @@
                     </h4>
                     <p>1-2 hours per week</p>
                 </div>
+                
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="alteration-box subject-alternate-box visible">
+                <div class="classname-box custom-classname-box">
+									<div class="class-name">
+										<img class="class-graphic" src="http://edify.loc/wp-content/themes/edify/images/english.svg" alt="English">
+										<h5>Math Class</h5>
+									</div>
+									<div class="price-for-class">
+										<h4 class="price-per-time"><sup class="font-rupee">`</sup> 10,000 <span class="per-time">/ annually</span></h4>
+                                                                                <label class="note-text">*Includes audio files of Reading Passages</label>
+										<h4 class="price-per-time"><sup class="font-rupee">`</sup> 3,000 <span class="per-time">/ annually</span></h4>
+										<label class="note-text">*Includes audio files of Reading Passages</label>
+									</div>
+								</div>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="days-timing">
                     <div class="info-block">
                         <span class="icon-calendar"></span>
@@ -79,7 +98,7 @@
                 <div class="booking-action-btn">
                     <a href="#" class="btn btn-primary">Book Math Course Now</a>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 </section>  
