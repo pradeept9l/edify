@@ -23,11 +23,11 @@ get_header(); ?>
                     <div class="container">
                         <div class="banner-content">
                             <h1>
-                                <span>India's Best Live</span>
-                                Online Classroom
+                                <small>Live</small>
+                                <span>Online Classes With</span>
+                                Inspiring Teachers
                             </h1>
-                            <p>With Edify, master maths without resorting to rote learning or fall in love with reading English
-                                and using perfect grammar.</p>
+                            <p>Learn by interacting with teachers who inspire your child.</p>
                             <a href="/book-course" class="btn btn-primary">Book Free Demo</a>
                         </div>
                     </div>
@@ -130,8 +130,13 @@ get_header(); ?>
 				</div>
 			</div>
 		</section>
-		<section class="online-classes">
-			<div class="container">
+		<section class="online-classes text-center">
+			<div class="container video-container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2 class="headingfont">How online classes work</h2>
+                                <p>edify class connects motivated learners, parents, and teachers together
+<br>to create great learning experiences</p>
 				<div class="online-video" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/video.jpg')">
 					<div class="shadelayer">
 						<a href="#" class="show-in-popup popup-youtube full-click"></a>
@@ -139,10 +144,12 @@ get_header(); ?>
 							<span class="play-active">
 								<img src="<?php echo get_template_directory_uri(); ?>/images/play.svg" alt="Play" />
 							</span>
-							<label class="video-tagline">How Online Live Classes Work?</label>
-						</div>
+                                                </div>
 					</div>
-				</div>
+				</div> 
+                                </div>
+                            </div>
+                               
 			</div>
 		</section>
 		<section class="students-review">

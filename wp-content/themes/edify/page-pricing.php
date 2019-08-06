@@ -49,6 +49,7 @@ get_header(); ?>
 						<div class="col-md-12">
 							<div class="pricing-shortdetail">
 								<p>Our group classes allow us to offer a lower price point than private tutoring classes. We have simple quarterly and annual packages to suit your child’s needs rightly.</p>
+                                                                <a href="#" class="btn btn-primary">Book Free Demo Class</a>
 							</div>
 						</div>
 					</div>
