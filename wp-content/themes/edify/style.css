@@ -1868,6 +1868,8 @@ footer .brandlogo {
     border-radius: 10px;
     padding: 35px 50px;
     margin: -55px 0 50px;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
 }
 .classname-box.static-box h1 {
     font-size: 38px;
@@ -1879,7 +1881,7 @@ footer .brandlogo {
     font-size: 24px;
     color: #000;
     font-weight: 700;
-    margin: 25px 0 10px;
+    margin: 40px 0 10px;
     text-align: left;
 }
 .classname-box.static-box p {
