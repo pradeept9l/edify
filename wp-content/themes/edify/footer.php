@@ -170,9 +170,9 @@
         });
 
         // card select
-        $('.grade-card').click(function(){
-            $(this).addClass('selected').parents('.card-holder').siblings('.card-holder').children('.grade-card').removeClass('selected');
-        });
+//        $('.grade-card').click(function(){
+//            $(this).addClass('selected').parents('.card-holder').siblings('.card-holder').children('.grade-card').removeClass('selected');
+//        });
     });
 </script>
 <script type="text/javascript">
@@ -190,5 +190,6 @@
             }
         });
     </script>
+
 </body>
 </html>

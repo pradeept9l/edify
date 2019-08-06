@@ -74,16 +74,31 @@ $query = new WP_Query( array(
 				</div>
 				<div class="row">
 					<div class="col-md-4 card-holder">
-						<div class="grade-card selected">
+						<div class="grade-card listed-card">
 							<h5>Where to Look From</h5>
                                                         <p>3 Sessions</p>
+                                                         <div class="listing-seesion" style="display:none;">
+                                                        <div class="listed-session-box">
+                                                            <h5>Where to Look From</h5>
+                                                        <p>3 Sessions</p>
+							<ul class="listed-sessions">
+								<li>1 Sessions</li>
+								<li>2 Sessions</li>
+								<li>3 Sessions</li>
+								<li>4 Sessions</li>
+							</ul>
+                                                        </div>  
+                                                            <div class="view-detail">
+                                                            <a class="btn link-btn" href="javascript:void(0)">View Detail</a>
+                                                        </div>
+                                                        </div>
 						</div>
 					</div>
 					<div class="col-md-4 card-holder">
-						<div class="grade-card">
+						<div class="grade-card listed-card">
 							<h5>Fun with Numbers</h5>
                                                         <p>3 Sessions</p>
-                                                         <div class="listing-seesion">
+                                                        <div class="listing-seesion" style="display:none;">
                                                         <div class="listed-session-box">
                                                             <h5>Where to Look From</h5>
                                                         <p>3 Sessions</p>
@@ -102,15 +117,45 @@ $query = new WP_Query( array(
 						</div>
 					</div>
 					<div class="col-md-4 card-holder">
-						<div class="grade-card">
+						<div class="grade-card listed-card">
 							<h5>Give and Take</h5>
                                                         <p>3 Sessions</p>
+                                                         <div class="listing-seesion" style="display:none;">
+                                                        <div class="listed-session-box">
+                                                            <h5>Where to Look From</h5>
+                                                        <p>3 Sessions</p>
+							<ul class="listed-sessions">
+								<li>1 Sessions</li>
+								<li>2 Sessions</li>
+								<li>3 Sessions</li>
+								<li>4 Sessions</li>
+							</ul>
+                                                        </div>  
+                                                            <div class="view-detail">
+                                                            <a class="btn link-btn" href="javascript:void(0)">View Detail</a>
+                                                        </div>
+                                                        </div>
 						</div>
 					</div>
 					<div class="col-md-4 card-holder">
-						<div class="grade-card">
+						<div class="grade-card listed-card">
 							<h5>Long and Short</h5>
                                                         <p>3 Sessions</p>
+                                                         <div class="listing-seesion" style="display:none;">
+                                                        <div class="listed-session-box">
+                                                            <h5>Where to Look From</h5>
+                                                        <p>3 Sessions</p>
+							<ul class="listed-sessions">
+								<li>1 Sessions</li>
+								<li>2 Sessions</li>
+								<li>3 Sessions</li>
+								<li>4 Sessions</li>
+							</ul>
+                                                        </div>  
+                                                            <div class="view-detail">
+                                                            <a class="btn link-btn" href="javascript:void(0)">View Detail</a>
+                                                        </div>
+                                                        </div>
 						</div>
 					</div>
 					<div class="col-md-12 col-sm-12">
@@ -246,4 +291,20 @@ $query = new WP_Query( array(
 				</div>
 			</div>
 		</section>
+
 		<?php get_footer(); ?>
+    <script>
+$(document).ready(function() {
+    // Click event on body hide the element
+    $("body").click(function() {
+        $('.listing-seesion').slideUp(300);
+    });
+
+    // Click event on button show the element
+    $(".listed-card").click(function(event) {
+        $('.listing-seesion').slideUp(300);
+        $(this).children('.listing-seesion').slideDown(300);
+        event.stopPropagation();
+    });
+});
+</script>
