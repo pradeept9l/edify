@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-12 col-xs-12 col-md-12 col-lg-5">
                     <div class="bottomcontent">
-                        <img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Brand Logo"><br/>
+                        <img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/images/footer-logo.svg" alt="Brand Logo"><br/>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>

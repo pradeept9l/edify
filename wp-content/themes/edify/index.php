@@ -130,8 +130,13 @@ get_header(); ?>
 				</div>
 			</div>
 		</section>
-		<section class="online-classes">
-			<div class="container">
+		<section class="online-classes text-center">
+			<div class="container video-container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2 class="headingfont">How online classes work</h2>
+                                <p>edify class connects motivated learners, parents, and teachers together
+<br>to create great learning experiences</p>
 				<div class="online-video" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/video.jpg')">
 					<div class="shadelayer">
 						<a href="#" class="show-in-popup popup-youtube full-click"></a>
@@ -139,10 +144,12 @@ get_header(); ?>
 							<span class="play-active">
 								<img src="<?php echo get_template_directory_uri(); ?>/images/play.svg" alt="Play" />
 							</span>
-							<label class="video-tagline">How Online Live Classes Work?</label>
-						</div>
+                                                </div>
 					</div>
-				</div>
+				</div> 
+                                </div>
+                            </div>
+                               
 			</div>
 		</section>
 		<section class="students-review">

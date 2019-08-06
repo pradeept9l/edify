@@ -77,12 +77,6 @@ $query = new WP_Query( array(
 						<div class="grade-card selected">
 							<h5>Where to Look From</h5>
                                                         <p>3 Sessions</p>
-                                                        <ul class="listed-sessions">
-								<li>1 Sessions</li>
-								<li>2 Sessions</li>
-								<li>3 Sessions</li>
-								<li>4 Sessions</li>
-							</ul>
 						</div>
 					</div>
 					<div class="col-md-4 card-holder">
@@ -111,24 +105,12 @@ $query = new WP_Query( array(
 						<div class="grade-card">
 							<h5>Give and Take</h5>
                                                         <p>3 Sessions</p>
-							<ul class="listed-sessions">
-								<li>1 Sessions</li>
-								<li>2 Sessions</li>
-								<li>3 Sessions</li>
-								<li>4 Sessions</li>
-							</ul>
 						</div>
 					</div>
 					<div class="col-md-4 card-holder">
 						<div class="grade-card">
 							<h5>Long and Short</h5>
                                                         <p>3 Sessions</p>
-							<ul class="listed-sessions">
-								<li>1 Sessions</li>
-								<li>2 Sessions</li>
-								<li>3 Sessions</li>
-								<li>4 Sessions</li>
-							</ul>
 						</div>
 					</div>
 					<div class="col-md-12 col-sm-12">
