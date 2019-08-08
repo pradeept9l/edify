@@ -1,7 +1,4 @@
 <?php
-/***
- Template Name: Pricing
- ***/
 get_header(); ?>
 <?php
 if (have_posts()):

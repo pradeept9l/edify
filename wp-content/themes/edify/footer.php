@@ -17,19 +17,15 @@
                 <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
                     <label class="list-label">Company</label>
                     <ul class="footer-links">
-                        <li><a href="javascript:void(0)">Our Story</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
                     <label class="list-label">About</label>
                     <ul class="footer-links">
-                        <li><a href="<?php echo get_site_url(); ?>/#faq-section">FAQ</a></li>
-                        <li><a href="/contact-us">Contact Us</a></li>
-                        <li><a href="#">Post your requirements</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="<?php echo get_site_url(); ?>/#faq-section">FAQs</a></li>
+                        <li><a href="/contact-us">Ask us!</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
@@ -38,8 +34,6 @@
                         <li><a href="#"><span class="social-link icon-receiver"></span>+91 8287 200 400</a></li>
                         <li><a href="#"><span class="social-link icon-support"></span>hello@edify.com</a></li>
                         <li><a href="#"><span class="social-link icon-facebook"></span>Facebook</a></li>
-                        <li><a href="#"><span class="social-link icon-twitter"></span>Twitter</a></li>
-                        <li><a href="#"><span class="social-link icon-linkedin"></span>Linkedin</a></li>
                     </ul>
                 </div>
             </div>
