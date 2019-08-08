@@ -1131,7 +1131,7 @@ footer .social-link{
 	border:1px solid #ebebeb;
 	border-radius:5px;
 	padding:20px 25px;
-	height: auto;
+	height: 104px;
 	-webkit-transition:all 0.3s ease 0s;
 	-o-transition:all 0.3s ease 0s;
 	transition:all 0.3s ease 0s;
@@ -1164,6 +1164,10 @@ footer .social-link{
 }
 .listed-session-box {
     padding: 25px 30px 22px;
+    overflow-y: auto;
+    z-index: 3;
+    position: relative;
+    height: 239px;
 }   
 .view-detail {
     text-align: left;
@@ -1188,10 +1192,11 @@ footer .social-link{
 }
 .link-to {
 	position: absolute;
-	right: 0;
+	right: 20px;
 	top:0;
 	left: 0;
 	bottom: 0;
+        z-index: 2;
 }
 .grade-card.listed-card a {
 	text-decoration: none;
