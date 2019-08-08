@@ -24,7 +24,7 @@
                 <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
                     <label class="list-label">About</label>
                     <ul class="footer-links">
-                        <li><a href="<?php echo get_site_url(); ?>/#faq-section">FAQs</a></li>
+                        <li><a class="scrollto" href="<?php echo get_site_url(); ?>/#faq-section">FAQs</a></li>
                         <li><a href="/contact-us">Ask us!</a></li>
                     </ul>
                 </div>
@@ -165,13 +165,19 @@ var pageId = '<?php echo get_the_ID(); ?>';
                 setTimeout(function() {
                     $('html, body').scrollTop(0).show();
                     $('html, body').animate({
-                        scrollTop: $(window.location.hash).offset().top - 100
-                        }, 500);
+                        scrollTop: $(window.location.hash).offset().top 
+                        }, 1500);
                 }, 0);
             }
             else {
                 $('html, body').show();
             }
+            $(".scrollto").click(function (){
+                $('html, body').animate({
+                    scrollTop: $($(this).attr('href')).offset().top - 100
+                }, 2000);
+                return false;
+            });
         });
     </script>
 </body>

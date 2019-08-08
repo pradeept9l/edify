@@ -37,7 +37,7 @@ $categorys = get_term_by('slug', $_GET['subject'], 'subjects');
                             <h1>How do you learn <br/><span><?= ucfirst($_GET['subject']); ?></span> with us</h1>
                             <?php echo $categorys->description; ?>
 
-                            <a href="#" class="btn btn-primary white-btn">Browse Topics</a>
+                            <a href="#select-topic" class="scrollto btn btn-primary white-btn">Browse Topics</a>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -60,7 +60,7 @@ $categorys = get_term_by('slug', $_GET['subject'], 'subjects');
 <section class="available-topics">
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 grade-selection">
+            <div class="col-sm-12 grade-selection" id="select-topic">
                 <h2 class="secondary-font">Select Topics for</h2>
                 <?php
                 $classes = get_terms(
@@ -102,7 +102,9 @@ $categorys = get_term_by('slug', $_GET['subject'], 'subjects');
                 <div class="grade-card listed-card">
                     <h5> <?= the_title(); ?></h5>
                     <p><?= $sessions; ?>  Sessions</p>
-                    <div class="listing-seesion" style="display:none;">
+                    <div class="listing-seesion">
+                    <a  class="link-to" href="<?= the_permalink(); ?>">
+                    </a>
                         <div class="listed-session-box">
                             <h5><?= the_title(); ?></h5>
                             <p><?= $sessions; ?> Sessions</p>
@@ -159,18 +161,3 @@ $categorys = get_term_by('slug', $_GET['subject'], 'subjects');
 </section>
 
 <?php get_footer(); ?>
-<script>
-    $(document).ready(function () {
-// Click event on body hide the element
-        $("body").click(function () {
-            $('.listing-seesion').slideUp(300);
-        });
-
-// Click event on button show the element
-        $(".listed-card").click(function (event) {
-            $('.listing-seesion').slideUp(300);
-            $(this).children('.listing-seesion').slideDown(300);
-            event.stopPropagation();
-        });
-    });
-</script>
