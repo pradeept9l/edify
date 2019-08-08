@@ -1,17 +1,23 @@
+<?php 
+// $id = get_the_ID();
+//$ids = array("147", "44", "21");
+//if (!in_array($id, $ids)) { ?>
+
+<?php // } ?>
 <footer>
     <div class="container">
         <div class="separator-box">
             <div class="row">
                 <div class="col-sm-12 col-xs-12 col-md-12 col-lg-5">
                     <div class="bottomcontent">
-                        <img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/images/footer-logo.svg" alt="Brand Logo"><br/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <img class="brandlogo" src="<?php echo get_template_directory_uri(); ?>/images/logo.svg" alt="Brand Logo"><br/>
+                        <p>Edify Class is an online learning community where inspiring teachers interact with young learners and ignite their imagination.</p>
                     </div>
                 </div>
                 <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
                     <label class="list-label">Company</label>
                     <ul class="footer-links">
-                        <li><a href="#">Our Story</a></li>
+                        <li><a href="javascript:void(0)">Our Story</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms & Conditions</a></li>
                         <li><a href="#">Careers</a></li>
@@ -20,10 +26,9 @@
                 <div class="col-lg-2 col-sm-12 col-xs-12 col-md-4">
                     <label class="list-label">About</label>
                     <ul class="footer-links">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="<?php echo get_site_url(); ?>/#faq-section">FAQ</a></li>
+                        <li><a href="/contact-us">Contact Us</a></li>
                         <li><a href="#">Post your requirements</a></li>
-                        <li><a href="#">Home Owners</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
@@ -31,7 +36,7 @@
                     <label class="list-label">Reach Us</label>
                     <ul class="footer-links">
                         <li><a href="#"><span class="social-link icon-receiver"></span>+91 8287 200 400</a></li>
-                        <li><a href="#"><span class="social-link icon-support"></span>support@edify.com</a></li>
+                        <li><a href="#"><span class="social-link icon-support"></span>hello@edify.com</a></li>
                         <li><a href="#"><span class="social-link icon-facebook"></span>Facebook</a></li>
                         <li><a href="#"><span class="social-link icon-twitter"></span>Twitter</a></li>
                         <li><a href="#"><span class="social-link icon-linkedin"></span>Linkedin</a></li>
@@ -60,12 +65,21 @@
     });
     $('.selectpicker').selectpicker('refresh');
     $(document).ready(function() {
+var pageId = '<?php echo get_the_ID(); ?>';
+ if(pageId == '21'){
+ $('form.wpcf7-form').attr('action','/become-a-teacher/');
+} else if(pageId == '44'){
+ $('form.wpcf7-form').attr('action','/book-course/');
+}else if(pageId == '147'){
+ $('form.wpcf7-form').attr('action','/contact-us/');
+}
+   
         getDayRange(1);
         $('.selectpicker').selectpicker('refresh');
         $("#text-carousel").owlCarousel({
 
             navigation : false, // Show next and prev buttons
-            slideSpeed : 300,
+            slideSpeed : 100,
             paginationSpeed : 1000,
             singleItem:true,
             autoPlay:3000,
@@ -97,56 +111,32 @@
         });
         
         var boxoffset = $('.movingform .form-box').offset().top;
-        var movingheight = $('.movingform').outerHeight();
-        var boxheight = $('.form-box').outerHeight();
-        var curveheight = $('.form-section .two-curves').outerHeight();
-        var curveoffset = $('.form-section .two-curves').offset().top;
-        var curveCount = curveoffset + curveheight;
-        //alert(boxoffset+', '+movingheight+', '+boxheight)
-        $(window).scroll(function(){
-            
-            if($('.form-group .form-control').hasClass('wpcf7-not-valid')){
-                //setTimeout(function(){
-                    var windowoffset = $(window).scrollTop();
-                    var countheight = boxoffset + boxheight;
-                    var remainingheight = countheight - windowoffset;
-                    //salert(remainingheight);
-                    
-                    if($(this).width() > 991){
-                       if($(this).scrollTop() > (boxoffset + boxheight) - curveCount + 150){
-                        $('.two-curves').addClass('move');
-                        //alert(movingheight +"movingheight" + boxheight + 'boxheight')
-                        $('.form-section .two-curves').css({
-                           top:movingheight - (boxheight+230)
-                        });
-                        
-                       }
-
-                   }
-               // },0);
-               // alert(movingheight + ', '+ boxheight)
-                
-                
-            }else{
-                 
-                if($(this).width() > 991){
-                    if($(this).scrollTop() > (boxoffset + boxheight) - curveCount + 150){
-                        $('.two-curves').addClass('move');
-                        $('.form-section .two-curves').css({
-                            top:movingheight - boxheight + 230
-                        });
-                    }else{
-                        $('.two-curves').removeClass('move');
-                        $('.form-section .two-curves').css({
-                            top: curveoffset
-                        });
-                    }
-
-                }
-            }
-            
-
-        });
+					var boxheight = $('.form-box').outerHeight();
+					var curveheight = $('.form-section .two-curves').outerHeight();
+					var curveoffset = $('.form-section .two-curves').offset().top;
+					var curveCount = curveoffset + curveheight;
+					//alert(curveCount)
+					
+					$(window).scroll(function(){
+						if($(this).scrollTop() > (boxoffset + boxheight) - curveCount + 150){
+							$('.two-curves').addClass('move');
+							$('.form-section .two-curves').css({
+								top:boxheight - 230
+							});
+						}else{
+							$('.two-curves').removeClass('move');
+							$('.form-section .two-curves').css({
+								top: curveoffset
+							});
+						}
+						
+					});
+					
+					//header mobile menu
+					$('.drawer-lines').click(function(){
+						$('.header-nav').toggleClass('open-menu');
+						$(this).toggleClass('backshade');
+					});
     });
 
 
@@ -170,9 +160,9 @@
         });
 
         // card select
-//        $('.grade-card').click(function(){
-//            $(this).addClass('selected').parents('.card-holder').siblings('.card-holder').children('.grade-card').removeClass('selected');
-//        });
+        $('.grade-card').click(function(){
+            $(this).addClass('selected').parents('.card-holder').siblings('.card-holder').children('.grade-card').removeClass('selected');
+        });
     });
 </script>
 <script type="text/javascript">
@@ -190,6 +180,5 @@
             }
         });
     </script>
-
 </body>
 </html>
